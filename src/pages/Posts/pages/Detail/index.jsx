@@ -13,7 +13,7 @@ const PostDetail = ({ classes, match }) => {
 
   useEffect(() => {
     setCurrentPost(db.find(data => Number(data.id) === Number(match.params.id)))
-  }, [])
+  }, [match])
 
   return (
     <div className={classes.root}>
