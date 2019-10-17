@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import withStyles from 'react-jss'
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom'
+import { startsWith } from 'lodash'
 
 import styles from './styles'
 
@@ -19,7 +20,9 @@ const App = ({ classes, location }) => {
           {
             path: '/',
             title: 'Posts',
-            isActive: location.pathname === '/'
+            isActive:
+              location.pathname === '/' ||
+              startsWith(location.pathname, '/post/')
           },
           {
             path: '/new-post',
