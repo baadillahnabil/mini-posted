@@ -7,8 +7,8 @@ import styles from './styles'
 
 import Header from '../components/Header'
 import Posts from '../pages/Posts'
-import PostDetail from '../pages/Posts/Detail'
-import AddPost from '../pages/Posts/Add'
+import PostDetail from '../pages/Posts/pages/Detail'
+import AddPost from '../pages/Posts/pages/Add'
 import PasswordGenerator from '../pages/PasswordGenerator'
 
 const App = ({ classes, location }) => {

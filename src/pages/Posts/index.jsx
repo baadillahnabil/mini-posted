@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import withStyles from 'react-jss'
 
-import Card from '../../components/Card'
+import Card from './components/Card'
 
 import db from '../../db/data.json'
 import styles from './styles'
