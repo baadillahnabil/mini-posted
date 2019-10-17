@@ -1,6 +1,7 @@
 const styles = {
   root: {
-    margin: '5%'
+    margin: '5%',
+    fontFamily: 'fantasy'
   }
 }
 

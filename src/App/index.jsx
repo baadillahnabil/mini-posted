@@ -1,18 +1,39 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import withStyles from 'react-jss'
-import { Switch, Route, Redirect } from 'react-router-dom'
+import { Switch, Route, Redirect, withRouter } from 'react-router-dom'
 
 import styles from './styles'
 
+import Header from '../components/Header'
 import Posts from '../pages/Posts'
 import PostDetail from '../pages/Posts/Detail'
 import AddPost from '../pages/Posts/Add'
 import PasswordGenerator from '../pages/PasswordGenerator'
 
-const App = ({ classes }) => {
+const App = ({ classes, location }) => {
   return (
     <div className={classes.root}>
+      <Header
+        links={[
+          {
+            path: '/',
+            title: 'Posts',
+            isActive: location.pathname === '/'
+          },
+          {
+            path: '/new-post',
+            title: 'Add Post',
+            isActive: location.pathname === '/new-post'
+          },
+          {
+            path: '/password-generator',
+            title: 'Password Generator',
+            isActive: location.pathname === '/password-generator'
+          }
+        ]}
+      />
+
       <Switch>
         <Route path="/" exact component={Posts} />
         <Route path="/post/:id" exact component={PostDetail} />
@@ -25,7 +46,8 @@ const App = ({ classes }) => {
 }
 
 App.propTypes = {
-  classes: PropTypes.object.isRequired
+  classes: PropTypes.object.isRequired,
+  location: PropTypes.object.isRequired
 }
 
-export default withStyles(styles)(App)
+export default withRouter(withStyles(styles)(App))
