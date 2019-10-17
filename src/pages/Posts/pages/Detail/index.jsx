@@ -5,7 +5,7 @@ import { withRouter } from 'react-router-dom'
 
 import Card from '../../components/Card'
 
-import db from '../../../../db/data.json'
+import db from '../../../../db'
 import styles from './styles'
 
 const PostDetail = ({ classes, match }) => {
