@@ -1,19 +1,37 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import withStyles from 'react-jss'
+import { withRouter } from 'react-router-dom'
 
+import Card from '../../components/Card'
+
+import db from '../../../../db/data.json'
 import styles from './styles'
 
-const PostDetail = ({ classes }) => {
+const PostDetail = ({ classes, match }) => {
+  const [currentPost, setCurrentPost] = useState(null)
+
+  useEffect(() => {
+    setCurrentPost(db.find(data => Number(data.id) === Number(match.params.id)))
+  }, [])
+
   return (
     <div className={classes.root}>
-      <p>Post detail page</p>
+      {currentPost && (
+        <Card
+          title={currentPost.title}
+          author={currentPost.author}
+          body={currentPost.body}
+          fullWidth
+        />
+      )}
     </div>
   )
 }
 
 PostDetail.propTypes = {
-  classes: PropTypes.object.isRequired
+  classes: PropTypes.object.isRequired,
+  match: PropTypes.object.isRequired
 }
 
-export default withStyles(styles)(PostDetail)
+export default withRouter(withStyles(styles)(PostDetail))
