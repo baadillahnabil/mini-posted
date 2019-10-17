@@ -1,3 +1,25 @@
+# with Yarn/NPM Setup:
+
+### Install all the dependencies:
+
+```
+yarn install
+```
+
+### Compiles and hot-reloads for development:
+
+```
+yarn start
+```
+
+### Compiles and minifies for production:
+
+```
+yarn build
+```
+
+#
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
