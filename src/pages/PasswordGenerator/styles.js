@@ -1,5 +1,12 @@
 const styles = {
-  root: ''
+  root: {
+    display: 'flex',
+    flexDirection: 'column'
+  },
+
+  button: {
+    marginTop: 20
+  }
 }
 
 export default styles
